@@ -67,7 +67,7 @@ if($getdata == 200) die(PHP_EOL."* FAILED".PHP_EOL);
         CURLOPT_SSL_VERIFYPEER => 0, 
         CURLOPT_SSL_VERIFYHOST => 0,
         //CURLOPT_PROXY => "127.0.0.1:8989",
-        CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4))->get($urlapi."?list=".$email.":".$pwd."&token=".$token."&wallet=".$wallet.", $header);
+        CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4))->get($urlapi."?list=".$email.":".$pwd."&token=".$token."&wallet=".$wallet, $header);
 }
 $rollingCurl->setCallback(function(\RollingCurl\Request $request, \RollingCurl\RollingCurl $rollingCurl) {
     global $listname, $dir, $delpercheck, $no, $total, $live, $dead, $unknown, $connection, $insufficient, $email;
