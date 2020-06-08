@@ -87,11 +87,11 @@ $rollingCurl->setCallback(function(\RollingCurl\Request $request, \RollingCurl\R
         file_put_contents("live.txt", $contentx.PHP_EOL, FILE_APPEND);
         echo color()["LG"]."LIVE".color()["WH"]." => ".$contentx." [Toolsb0x]".date("H:i:s");
     }
-    elseif(preg_match("#login_banned#", $x)) {
+    elseif(preg_match("#unknown#", $x)) {
         $unknown++;
         $contentx = getStr($x,'"email":"','"}');
-        file_put_contents("banned.txt", $contentx.PHP_EOL, FILE_APPEND);
-        echo color()["LR"]."BANNED".color()["WH"]." => ".$contentx." [Toolsb0x]".date("H:i:s");
+        file_put_contents("unknown.txt", $contentx.PHP_EOL, FILE_APPEND);
+        echo color()["LR"]."UNKNOWN".color()["WH"]." => ".$contentx." [Toolsb0x]".date("H:i:s");
     }
     elseif(preg_match("#connection#", $x)) {
         $connection++;
